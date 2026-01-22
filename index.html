@@ -5355,5 +5355,36 @@ void matmul_arm(float* A, float* B, float* C) {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AIHandbook />);
+// Global error overlay to surface runtime errors in the browser
+const showFatalError = (err) => {
+  try {
+    const rootEl = document.getElementById('root');
+    const message = (err && err.stack) ? err.stack : String(err);
+    if (rootEl) {
+      rootEl.innerHTML = `
+        <div style="font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; padding: 2rem;">
+          <h2 style="color:#c53030; margin-bottom:0.5rem">Application Error</h2>
+          <div style="background:#fff5f5;border:1px solid #fed7d7;padding:1rem;border-radius:8px;white-space:pre-wrap;color:#2d3748">${String(message).replace(/</g,'&lt;')}</div>
+          <p style="color:#4a5568;margin-top:0.75rem">Open the browser console for details (F12). If this persists, contact the repository maintainer.</p>
+        </div>`;
+    }
+  } catch (e) {
+    console.error('Failed to render error overlay', e);
+  }
+  console.error(err);
+};
+
+window.addEventListener('error', (e) => {
+  showFatalError(e.error || e.message || e);
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+  showFatalError(e.reason || e);
+});
+
+try {
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(<AIHandbook />);
+} catch (err) {
+  showFatalError(err);
+}
