@@ -3498,6 +3498,22 @@ const AIHandbook = () => {
     </div>
   );
 
+  const Header = () => (
+    <div className="mb-6 flex items-center justify-between">
+      <h1 className="text-3xl font-bold text-gray-900">AI Inference Engineering Handbook</h1>
+      <div className="flex items-center space-x-3">
+        <button onClick={() => setActiveSection('intro')} className="text-sm px-3 py-2 rounded bg-gray-100 hover:bg-gray-200">🏠 Home</button>
+        <button onClick={toggleTheme} className="p-2 rounded hover:bg-gray-100">{theme === 'light' ? '🌞' : '🌙'}</button>
+      </div>
+    </div>
+  );
+
+  const Footer = () => (
+    <div className="mt-10 text-sm text-gray-600 border-t pt-4">
+      <p>AI Inference Engineering Handbook • 31 Topics • <a href="https://github.com/yourrepo" className="text-blue-600">github.com/yourrepo</a></p>
+    </div>
+  );
+
   const markComplete = (section) => {
     const newCompleted = new Set(completedSections);
     newCompleted.add(section);
@@ -5304,11 +5320,13 @@ void matmul_arm(float* A, float* B, float* C) {
         />
 
         {/* Main Content */}
-        <div className="flex-1 p-8 overflow-y-auto" style={{ maxHeight: '100vh' }}>
+        <main className="flex-1 p-8 overflow-y-auto" style={{ maxHeight: '100vh' }}>
           <div className="max-w-4xl mx-auto">
+            <Header />
             {renderContent()}
+            <Footer />
           </div>
-        </div>
+        </main>
       </div>
     </div>
   );
