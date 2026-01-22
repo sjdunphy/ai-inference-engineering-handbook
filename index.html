@@ -3411,8 +3411,8 @@ output = context.execute_v2([audio_input])`}</pre>
 
 const AIHandbook = () => {
   const [activeSection, setActiveSection] = useState('intro');
-  const [completedSections, setCompletedSections] = useState(new Set());
-  const [expandedTopics, setExpandedTopics] = useState(new Set(['intro']));
+  const [completedSections, setCompletedSections] = useState(() => new Set(JSON.parse(localStorage.getItem('completedSections') || '[]')));
+  const [expandedTopics, setExpandedTopics] = useState(() => new Set(JSON.parse(localStorage.getItem('expandedTopics') || '["intro"]')));
   // Theme (light / dark)
   const [theme, setTheme] = useState(document.documentElement.getAttribute('data-theme') || 'light');
 
@@ -3475,6 +3475,7 @@ const AIHandbook = () => {
       newExpanded.add(topic);
     }
     setExpandedTopics(newExpanded);
+    try { localStorage.setItem('expandedTopics', JSON.stringify(Array.from(newExpanded))); } catch (e) {}
   };
 
   const Sidebar = ({ sections, activeSection, completedSections, expandedTopics, toggleTopic, setActiveSection }) => (
@@ -3545,6 +3546,8 @@ const AIHandbook = () => {
     const newCompleted = new Set(completedSections);
     newCompleted.add(section);
     setCompletedSections(newCompleted);
+    // persist
+    try { localStorage.setItem('completedSections', JSON.stringify(Array.from(newCompleted))); } catch (e) {}
   };
 
   const sections = [
