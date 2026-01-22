@@ -53,8 +53,7 @@
     const Code = (props) => <span {...props}>💻</span>;
     const Check = (props) => <span {...props} style={{color:'#16a34a'}}>✓</span>;
 
-case 'hyperparams':
-        return (
+'hyperparams': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               28. Hyperparameter Tuning
@@ -244,8 +243,7 @@ case 'hyperparams':
           </div>
         );
 
-      case 'callcenter':
-        return (
+      'callcenter': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               29. Call Center ASR Optimization
@@ -456,8 +454,7 @@ config = {
           </div>
         );
 
-      case 'failures':
-        return (
+      'failures': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               30. Common Failure Modes
@@ -593,8 +590,7 @@ config = {
           </div>
         );
 
-      case 'troubleshooting':
-        return (
+      'troubleshooting': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               31. Troubleshooting Guide
@@ -766,8 +762,7 @@ print(prof.key_averages().table())`}</pre>
           </div>
         );
 
-      case 'quick-ref':
-        return (
+      'quick-ref': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               📄 Quick Reference Guide
@@ -898,8 +893,7 @@ print(prof.key_averages().table())`}</pre>
           </div>
         );
 
-      default:      case 'asr-deploy':
-        return (
+      'asr-deploy': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               24. ASR Deployment Guide
@@ -1079,8 +1073,7 @@ for segment in segments:
           </div>
         );
 
-      case 'llm-deploy':
-        return (
+      'llm-deploy': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               25. LLM Deployment Guide
@@ -1298,8 +1291,7 @@ curl http://localhost:8000/v1/completions \\
           </div>
         );
 
-      case 'benchmarks':
-        return (
+      'benchmarks': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               26. Benchmarking and Metrics
@@ -1434,8 +1426,7 @@ def benchmark_inference(model, test_data, warmup=10):
     print(f"P95: {np.percentile(latencies, 95):.2f}ms")
     print(f"P99: {np.percentile(latencies, 99):.2f}ms")
     print(f"Max: {np.max(latencies):.2f}ms")
-    print(f"Throughput: {len(test_data) / np.sum(latencies) * 1000:.2f}      case 'isa':
-        return (
+    print(f"Throughput: {len(test_data) / np.sum(latencies) * 1000:.2f}      'isa': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               16. Instruction Set Architectures (ISA)
@@ -1668,10 +1659,9 @@ def benchmark_inference(model, test_data, warmup=10):
               ✓ Mark Complete & Continue to CUDA and Alternatives →
             </button>
           </div>
-        );
+        ),
 
-      case 'cuda':
-        return (
+      'cuda': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               17. CUDA and Alternatives
@@ -1943,8 +1933,7 @@ def benchmark_inference(model, test_data, warmup=10):
           </div>
         );
 
-      case 'specialized':
-        return (
+      'specialized': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               18. Specialized AI Hardware
@@ -2005,8 +1994,8 @@ def benchmark_inference(model, test_data, warmup=10):
               ✓ Mark Complete & Start Part V: Memory & Optimization →
             </button>
           </div>
-        );      case 'runtime-basics':
-        return (
+        );
+      'runtime-basics': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               8. What Is an Inference Runtime?
@@ -2160,8 +2149,7 @@ def benchmark_inference(model, test_data, warmup=10):
           </div>
         );
 
-      case 'pytorch':
-        return (
+      'pytorch': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               9. PyTorch Runtime
@@ -2346,8 +2334,7 @@ output = loaded(audio_input)`}</pre>
           </div>
         );
 
-      case 'openvino':
-        return (
+      'openvino': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               10. OpenVINO (Open Visual Inference and Neural Network Optimization)
@@ -2575,8 +2562,7 @@ pot.compress_model(config)`}</pre>
           </div>
         );
 
-      case 'tensorrt':
-        return (
+      'tensorrt': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               11. TensorRT (NVIDIA Tensor Runtime)
@@ -2720,8 +2706,7 @@ engine = builder.build_serialized_network(network, config)`}</pre>
           </div>
         );
 
-      case 'onnx':
-        return (
+      'onnx': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               12. ONNX Runtime (Open Neural Network Exchange)
@@ -2962,8 +2947,7 @@ text_output = outputs[0]`}</pre>
           </div>
         );
 
-      case 'llamacpp':
-        return (
+      'llamacpp': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               13. llama.cpp and Variants
@@ -3622,9 +3606,8 @@ const AIHandbook = () => {
   ];
 
   const renderContent = () => {
-    switch(activeSection) {
-      case 'intro':
-        return (
+    const contentMap = {
+      'intro': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               AI Inference Engineering Handbook
@@ -3702,8 +3685,7 @@ const AIHandbook = () => {
           </div>
         );
 
-      case 'models':
-        return (
+      'models': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               1. What Is an AI Model?
@@ -3815,10 +3797,9 @@ const AIHandbook = () => {
               ✓ Mark Complete & Continue to Weights →
             </button>
           </div>
-        );
+        ),
 
-      case 'weights':
-        return (
+      'weights': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               2. Weights and Parameters
@@ -3949,10 +3930,9 @@ const AIHandbook = () => {
               ✓ Mark Complete & Continue to Activations →
             </button>
           </div>
-        );
+        ),
 
-      case 'activations':
-        return (
+      'activations': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               3. Activations and Memory
@@ -4092,10 +4072,9 @@ const AIHandbook = () => {
               ✓ Mark Complete & Continue to Inference →
             </button>
           </div>
-        );
+        ),
 
-      case 'inference':
-        return (
+      'inference': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               4. Training vs Inference
@@ -4284,10 +4263,9 @@ const AIHandbook = () => {
               ✓ Mark Complete & Start Part II: Computation Graphs →
             </button>
           </div>
-        );
+        ),
 
-      case 'comp-graphs':
-        return (
+      'comp-graphs': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               5. Understanding Computation Graphs
@@ -4447,10 +4425,9 @@ const AIHandbook = () => {
               ✓ Mark Complete & Continue to Static vs Dynamic Graphs →
             </button>
           </div>
-        );
+        ),
 
-      case 'static-dynamic':
-        return (
+      'static-dynamic': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               6. Static vs Dynamic Graphs
@@ -4664,8 +4641,7 @@ output = scripted(audio)  # Fast execution`}
           </div>
         );
 
-      case 'graph-opt':
-        return (
+      'graph-opt': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               7. Graph Optimization
@@ -4856,8 +4832,7 @@ output = scripted(audio)  # Fast execution`}
           </div>
         );
 
-      case 'kernels':
-        return (
+      'kernels': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               14. Kernels and Operations
@@ -5065,10 +5040,9 @@ void matmul_arm(float* A, float* B, float* C) {
               ✓ Mark Complete & Continue to CPU vs GPU Architecture →
             </button>
           </div>
-        );
+        ),
 
-      case 'cpu-gpu':
-        return (
+      'cpu-gpu': () => (
           <div className="space-y-6">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               15. CPU vs GPU Architecture
@@ -5303,7 +5277,10 @@ void matmul_arm(float* A, float* B, float* C) {
             </div>
           </div>
         );
-    }
+      },
+    };
+
+    return (contentMap[activeSection] || contentMap['intro'])();
   };
 
   return (
