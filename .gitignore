@@ -1,0 +1,10 @@
+# Ignore everything
+*
+*/
+
+# But not these files
+!.gitignore
+!index.html
+
+# Allow README if you want documentation
+!README.md
