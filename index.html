@@ -23,76 +23,86 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* ============================================
-           CSS VARIABLES - Modern Clean Theme
+           CSS VARIABLES - CodeStackr Inspired Theme
            ============================================ */
         :root {
-            /* Light Mode - Clean White */
-            --bg-primary: #FFFFFF;
-            --bg-secondary: #F8FAFC;
-            --bg-tertiary: #F1F5F9;
-            --bg-accent: #EFF6FF;
+            /* Light Mode - CodeStackr Light */
+            --bg-primary: #FAFAFA;
+            --bg-secondary: #F0F0F0;
+            --bg-tertiary: #E6E6E6;
+            --bg-accent: #FFF5E1;
+            --bg-code: #F5F5F5;
             
-            --text-primary: #0F172A;
-            --text-secondary: #475569;
-            --text-muted: #94A3B8;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4D4D4D;
+            --text-muted: #808080;
+            --text-code: #2E3440;
             
-            --border-light: rgba(15, 23, 42, 0.08);
-            --border-medium: rgba(15, 23, 42, 0.12);
-            --border-strong: rgba(15, 23, 42, 0.18);
+            --border-light: rgba(0, 0, 0, 0.08);
+            --border-medium: rgba(0, 0, 0, 0.15);
+            --border-strong: rgba(0, 0, 0, 0.25);
             
-            --accent-primary: #14B8A6;
-            --accent-secondary: #0D9488;
-            --accent-tertiary: #2DD4BF;
+            --accent-primary: #FF6B35;
+            --accent-secondary: #FF8C42;
+            --accent-tertiary: #FFA45B;
+            --accent-hover: #E55A2B;
             
-            --purple: #8B5CF6;
-            --yellow: #F59E0B;
-            --green: #10B981;
-            --red: #EF4444;
-            --indigo: #6366F1;
-            --pink: #EC4899;
-            --orange: #F97316;
-            --cyan: #06B6D4;
+            --purple: #9D72FF;
+            --yellow: #FFD93D;
+            --green: #6BCF7F;
+            --red: #FF6B6B;
+            --indigo: #667EEA;
+            --pink: #F687B3;
+            --orange: #FF6B35;
+            --cyan: #4ECDC4;
+            --blue: #4A90E2;
             
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
         
         [data-theme="dark"] {
-            /* Dark Mode - Modern Slate */
-            --bg-primary: #0F172A;
-            --bg-secondary: #1E293B;
-            --bg-tertiary: #334155;
-            --bg-accent: #1E3A5F;
+            /* Dark Mode - CodeStackr Dark */
+            --bg-primary: #1E1E1E;
+            --bg-secondary: #252526;
+            --bg-tertiary: #2D2D30;
+            --bg-accent: #37373D;
+            --bg-code: #1E1E1E;
             
-            --text-primary: #F8FAFC;
-            --text-secondary: #CBD5E1;
-            --text-muted: #64748B;
+            --text-primary: #D4D4D4;
+            --text-secondary: #CCCCCC;
+            --text-muted: #858585;
+            --text-code: #D4D4D4;
             
-            --border-light: rgba(248, 250, 252, 0.08);
-            --border-medium: rgba(248, 250, 252, 0.12);
-            --border-strong: rgba(248, 250, 252, 0.18);
+            --border-light: rgba(255, 255, 255, 0.08);
+            --border-medium: rgba(255, 255, 255, 0.15);
+            --border-strong: rgba(255, 255, 255, 0.25);
             
-            --accent-primary: #2DD4BF;
-            --accent-secondary: #5EEAD4;
-            --accent-tertiary: #14B8A6;
+            --accent-primary: #FF6B35;
+            --accent-secondary: #FF8C42;
+            --accent-tertiary: #FFA45B;
+            --accent-hover: #FF8C42;
             
-            --purple: #A78BFA;
-            --yellow: #FBBF24;
-            --green: #34D399;
-            --red: #F87171;
-            --indigo: #818CF8;
-            --pink: #F472B6;
-            --orange: #FB923C;
-            --cyan: #22D3EE;
+            --purple: #C586C0;
+            --yellow: #DCDCAA;
+            --green: #6A9955;
+            --red: #F48771;
+            --indigo: #9CDCFE;
+            --pink: #F48FB1;
+            --orange: #CE9178;
+            --cyan: #4EC9B0;
+            --blue: #569CD6;
             
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.6);
+            --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.7);
         }
         
         /* ============================================
@@ -110,7 +120,7 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
@@ -120,7 +130,7 @@
         
         /* Typography */
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             font-weight: 600;
             line-height: 1.3;
             letter-spacing: -0.01em;
@@ -157,17 +167,18 @@
         em { color: var(--accent-primary); font-style: normal; }
         
         code {
-            font-family: 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', monospace;
             font-size: 0.85em;
-            background-color: var(--bg-tertiary);
+            background-color: var(--bg-code);
             padding: 0.2em 0.4em;
             border-radius: 4px;
             color: var(--accent-primary);
+            font-weight: 500;
         }
         
         pre {
-            font-family: 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', monospace;
-            background-color: var(--bg-secondary);
+            font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            background-color: var(--bg-code);
             border: 1px solid var(--border-medium);
             border-radius: 8px;
             padding: 1.25rem;
@@ -181,7 +192,8 @@
             background: none;
             padding: 0;
             border-radius: 0;
-            color: var(--text-secondary);
+            color: var(--text-code);
+            font-weight: 400;
         }
         
         /* Links */
